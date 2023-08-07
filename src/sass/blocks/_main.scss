@@ -1,0 +1,251 @@
+@import 'fonts/fonts';
+@import 'base/mixins';
+.map {
+    font-size: 1rem;
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4.28em 0 2.85em;
+
+        &__title {
+            font-size: 2.85rem;
+            font-family: 'Gilroy Bold';
+            font-weight: 700;
+            line-height: 0.9;
+        }
+
+        &__btn {
+            position: relative;
+            padding: 1em 0.8em 1em 2.57em;
+
+            white-space: nowrap;
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 1;
+            color: $main-color;
+
+            border-radius: 10px;
+            background-color: $second-color;
+
+            @include transition;
+
+            &::before {
+                content: '';
+                width: 28px;
+                height: 28px;
+
+                background-image: url('../../icons/table_view.svg');
+                background-repeat: no-repeat;
+
+                position: absolute;
+                top: 12px;
+                left: 10px;
+            }
+
+            &:hover {
+                @include hover;
+            }
+        }
+    }
+    &-search {
+        padding: 1.4em 0;
+        font-size: 1rem;
+        background-color: $second-color;
+        position: relative;
+
+        &::after {
+            content: '';
+            max-width: 898px;
+            width: 100%;
+            height: 514px;
+            background: url('../../img/map-img.png') no-repeat;
+            position: absolute;
+            bottom: 29px;
+            z-index: 1;
+            left: calc(100% - 82%);
+        }
+
+        &-content {
+            position: relative;
+            z-index: 2;
+            max-width: 326px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 1px 5px 0px rgba(0, 26, 66, 0.15);
+
+            &-header {
+                padding: 1.4em 1.8em 1.4em 1.4em;
+                display: flex;
+                gap: 9px;
+                box-shadow: 0px 1px 5px 0px rgba(0, 26, 66, 0.15);
+
+                &__mobile {
+                    width: 100%;
+                    display: none;
+                    gap: 10px;
+                    padding: 0.71em;
+
+                    .mobile_input {
+                        width: 75%;
+                    }
+
+                    .btn_mobile {
+                        width: 20%;
+                        padding: 1em 5.8em 1em 2.57em;
+                        white-space: nowrap;
+                        &::before {
+                            background-image: url('../../icons/Filter.svg');
+                        }
+                    }
+                }
+
+                &__input {
+                    @include input('../../icons/search-icon.svg');
+                }
+
+                &__btn {
+                    position: relative;
+                    padding: 1em 0.8em 1em 2.57em;
+
+                    font-size: 1rem;
+                    font-weight: 500;
+                    line-height: 1;
+                    color: $main-color;
+
+                    border-radius: 10px;
+                    background-color: $second-color;
+
+                    @include transition;
+
+                    &::before {
+                        content: '';
+                        width: 12px;
+                        height: 12px;
+
+                        background-image: url('../../icons/Filter-icon.svg');
+                        background-repeat: no-repeat;
+
+                        position: absolute;
+                        top: 14px;
+                        left: 10px;
+                    }
+
+                    &:hover {
+                        @include hover;
+                    }
+                }
+            }
+
+            &-list {
+                font-size: 1.14em;
+                padding: 1.42em 0.35em;
+                max-height: 451px;
+                overflow-y: scroll;
+                &::-webkit-scrollbar {
+                    width: 11px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: rgba($main-color, 0.5);
+                    border-radius: 26px;
+                }
+
+                ul {
+                    list-style: none;
+
+                    li {
+                        padding: 0.35em 0.7em;
+                        cursor: pointer;
+                        @include transition;
+
+                        &:hover {
+                            @include hover;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+
+            &__mobile {
+                display: none;
+                margin: 1em 0;
+                padding: 2em;
+                background-color: #e3e8ec;
+
+                &-desc {
+                    font-size: 1.28rem;
+                }
+
+                .table_modal {
+                    display: block;
+                    margin-top: 1em;
+                }
+            }
+        }
+    }
+    &-footer {
+        padding: 3.85em 0 6em 0;
+        max-width: 1014px;
+
+        &-description {
+            font-size: 1.28rem;
+            height: 82px;
+        }
+    }
+
+    .table-view {
+        position: absolute;
+        width: 100%;
+        top: 234px;
+        left: 0;
+        z-index: 111;
+        transform: translateX(-225%);
+        transition: transform 0.1s linear;
+        overflow-x: hidden;
+
+        &.show {
+            transform: translateX(0);
+        }
+    }
+
+    .table {
+        text-align: left;
+        background-color: #fff;
+        border-collapse: collapse;
+        box-shadow: -1px 0px 0px 0px rgba(22, 16, 62, 0.2);
+
+        color: $main-color;
+
+        td svg {
+            vertical-align: middle;
+            cursor: pointer;
+        }
+
+        td span {
+            padding: 0 0.8em;
+        }
+
+        td,
+        th {
+            vertical-align: baseline;
+            border-right: 2px solid #e9e9e9;
+            border-left: 2px solid #e9e9e9;
+            padding: 1.1em 0.8em;
+            font-weight: 600;
+        }
+
+        td:nth-child(2) {
+            text-align: center;
+            padding: 0;
+        }
+
+        thead {
+            background-color: $second-color;
+        }
+
+        .table-input {
+            @include input('../../icons/arrow.svg');
+        }
+    }
+}

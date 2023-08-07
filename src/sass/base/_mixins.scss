@@ -1,0 +1,27 @@
+@import 'variables';
+
+@mixin input($icon) {
+    position: relative;
+    color: $main-color;
+    padding: 0.5em 1.28em;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid rgba(22, 16, 62, 0.3);
+    background-image: url($icon);
+    background-repeat: no-repeat;
+    background-position: right 5% center;
+    opacity: 0.8;
+
+    &:focus {
+        border-color: rgba(22, 16, 62, 0.8);
+        opacity: 1;
+    }
+}
+
+@mixin transition {
+    transition: background 0.2s linear;
+}
+
+@mixin hover {
+    background-color: $grey;
+}

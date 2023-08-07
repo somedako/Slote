@@ -1,0 +1,233 @@
+@media (max-width: 1382px) {
+    .header__inner {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .header-nav {
+        order: 3;
+    }
+
+    .header-btns {
+        gap: 15px;
+        order: 2;
+    }
+
+    .header-nav-list {
+        gap: 12px;
+    }
+
+    .popup.active {
+        top: 40%;
+    }
+}
+
+@media (max-width: 1335px) {
+    .table-view.show {
+        top: 313px;
+    }
+
+    .popup.active {
+        top: 80%;
+    }
+}
+
+@media (max-width: 1280px) {
+    .footer-nav {
+        grid-template-columns: repeat(2, minmax(155px, 340px));
+        justify-content: space-around;
+        grid-template-rows: auto;
+        grid-template-areas:
+            'a e'
+            'b .'
+            'c .'
+            'd .'
+            'f .'
+            'g g';
+
+        .list7 {
+            justify-content: center;
+        }
+    }
+
+    .footer-nav-list-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1em;
+
+        img {
+            display: block;
+        }
+    }
+
+    .list1 {
+        .footer-nav-list {
+            display: block;
+        }
+    }
+
+    .footer-nav-list {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+}
+
+@media (max-width: 1080px) {
+    .footer-top,
+    .footer-bottom,
+    .footer-copyright {
+        gap: 25px;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+}
+
+@media (max-width: 809px) {
+    .header__inner {
+        gap: 0;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .header-nav-list {
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        position: absolute;
+        z-index: 12;
+        background-color: #fff;
+        right: 7px;
+        top: 21px;
+        gap: 0;
+
+        opacity: 0;
+        transform: translateX(365px);
+        transition: opacity 0.2s linear, transform 0.2s linear;
+
+        &.active {
+            opacity: 1;
+            transform: translateX(-0);
+            .close {
+                display: block;
+            }
+        }
+    }
+
+    .header-btns__lang {
+        color: #fff;
+        &:before {
+            left: 65px;
+        }
+    }
+
+    .header-btns__demo {
+        display: none;
+    }
+
+    .map-header {
+        padding: 3.28em 0 1.85em;
+    }
+
+    .map-header__title {
+        font-size: 1.85rem;
+        font-weight: 700;
+    }
+
+    .map-search-content {
+        width: 100%;
+        margin: 0 auto;
+        max-width: 578px;
+    }
+
+    .map-search::after {
+        display: none;
+    }
+
+    .map-search-content-header__mobile {
+        display: flex;
+    }
+
+    .map-search-content-header,
+    .map-header__btn,
+    .map-search-content-list {
+        display: none;
+    }
+
+    .map-search-content__mobile {
+        display: block;
+    }
+
+    .map-footer {
+        padding: 1.85em 0 2em 0;
+    }
+
+    .map-footer-description {
+        height: auto;
+    }
+
+    .table-view.show {
+        top: 350px;
+    }
+
+    .footer {
+        padding: 4em 0.5em;
+    }
+
+    .footer-certificats {
+        flex-wrap: wrap;
+        justify-content: center;
+        color: $main-color;
+    }
+
+    .footer-nav {
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+        grid-template-areas:
+            'e'
+            'a'
+            'b'
+            'c'
+            'f'
+            'd'
+            'g';
+
+        .list6 {
+            justify-self: center;
+        }
+    }
+
+    .list1 {
+        .footer-nav-list {
+            display: none;
+        }
+    }
+
+    .footer-btns__lang {
+        color: $main-color;
+    }
+
+    .footer-top-nav-list,
+    .footer-bottom-contacts,
+    .footer-copyright__links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-nav-list {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+}
